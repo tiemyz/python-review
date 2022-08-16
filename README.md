@@ -1,2 +1,2 @@
 # python-review
-Repositório para revisão/estudos/testes.
+Repositório para revisão/estudos/exercícios/testes.
