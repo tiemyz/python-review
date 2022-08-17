@@ -1,0 +1,123 @@
+LISTAS:
+
+★ Listas são coleções de dados em Python que agrupam um conjunto de elementos. Listas podem conter strings, valores numéricos e até mesmo outras listas. Veja abaixo o exemplo de uma lista com quatro elementos:
+
+                               nucleotideos = ["A","T","C","G"]
+                               print(nucleotideos) 
+                               ## Sera impresso: ['A', 'T', 'C', 'G']
+
+---------------------------------------------------------------------------------------------------        
+PRINCIPAIS MÉTODOS DA LISTA:
+
+★ lista.append(x) -> Insere o elemento x no final da lista.
+
+★ lista.insert(i,x) -> Insere o elemento x na posição i.
+
+★ lista.extend(L) -> Insere todos os elementos da lista L no final da lista.
+
+★ len(lista) -> Retorna o número de elementos de lista.
+
+                                     EXEMPLOS: 
+
+                             nucleotideos = ["A","T","C","G"]
+ 
+                             nucleotideos.extend(["G", "C"])
+                             print(nucleotideos)
+                             # Sera impresso ['A', 'T', 'C', 'G', 'G', 'C']
+ 
+                             print(nucleotideos)
+                             # Sera impresso ['A', 'T', 'C', 'G']
+ 
+                             if "A" in nucleotideos:
+	                         print("Exite um A em nucleotideos")
+                             # Sera impresso True
+ 
+                             print(len(nucleotideos))
+                             # Sera impresso 2
+
+---------------------------------------------------------------------------------------------------
+
+PERCORRENDO LISTAS USANDO O LAÇO >FOR<:
+
+★ Como visto anteriormente, em certos momentos é preciso percorrer listas analisando cada elemento individualmente. Para isso associamos o comando for com o operador in.
+
+                            for x in ["A","T","C","G"]:
+	                        print(x)
+ 
+                            # Sera impresso
+                            # A
+                            # T
+                            # C
+                            # G
+
+★ Em certas situações pode ser necessário saber a posição de um elemento numa determinada lista. Para isso vamos associar o for com um comando condicional if da seguinte maneira:
+
+                 nucleotideos = ["A","T","C","G","A","T","C","A","C"]
+ 	
+                 for i in range(len(nucleotideos)):
+	             if nucleotideos[i] == "A":
+		         print("Adenina encontrada na posicao: %d" % i) 
+
+★ Vamos entender melhor o que foi realizado acima:
+
+★ len(nucleotideos): retorna o números de elementos da lista nucleotídeos;
+★ range(len(nucleotideos)): retorna uma lista contendo inteiros entre 0 e o números de elementos da lista menos um. Como por exemplo, se existirem cinco elemento nas lista, então range(len(nucleotideos)) retorna [ 0, 1 , 2, 3, 4];
+★ for i in range(len(nucleotideos): a lista de inteiros é percorrida por um laço for. A variável i irá assumir cada um dos valores presente na lista de inteiros;
+★ if “A” == nucleotideos[i]: é feita uma comparação se o elemento na posição i da lista de nucleotídeos é igual a “A”. Caso seja, uma mensagem é impressa na tela; caso não seja, a variável i assume o próximo valor da lista.
+Podemos ainda utilizar o laço for para imprimir listas, tuplas e dicionários presentes dentro de outras listas. Veja este exemplo:
+
+                aminoacidos = [('Alanina', 'ALA', 'A'), \
+                ('Cisteina', 'CYS', 'C')]
+ 
+# Imprimindo listas complexas
+ 
+               for aa, aa_tres, aa_um in aminoacidos:
+	           print("Aminoacido: ",aa)
+	           print("Aminoacido (codigo 3 letras): ",aa_tres)
+	           print("Aminoacido (codigo 1 letra): ",aa_um)
+
+★ Nesse exemplo, a variável aa recebe a primeira posição de cada tupla presente na variável aminoacidos, aa_tres recebe a segunda e aa_um recebe a terceira posição. Enquanto elementos em listas são declaradas entre colchetes “[ ]”, elementos em tuplas são declarados entre parênteses “( )” e elementos em dicionários entre chaves “{ }”. No próximo tópico, vamos entender melhor o que são tuplas e dicionários.
+
+---------------------------------------------------------------------------------------------------
+
+TUPLAS E DICIONÁRIOS:
+
+★ Tuplas são similares às listas, porém são imutáveis, ou seja, não se pode acrescentar, apagar ou fazer atribuições aos itens. É possível converter tuplas em listas e vice-versa:
+
+                              # Converte uma lista em uma tupla
+                              tupla = tuple(lista)
+ 
+                              # Converte uma tupla em uma lista
+                              lista = list(tupla)
+
+★ Dicionários são listas (mutáveis) de associações compostas por uma chave, que deve ser única, e um valor correspondente.
+
+aminoacidos = {'ALA': 'Alanina', 'CYS': 'Cisteina'}
+print(aminoacidos['ALA'])
+ 
+# Alanina
+Você pode adicionar e apagar elementos a dicionários de maneira simples:
+
+aminoacidos = {'ALA': 'Alanina', 'CYS': 'Cisteina'}
+ 
+aminoacidos['HIS'] = 'Histidina'
+# adiciona Histidina
+ 
+del aminoacidos['ALA']
+# apaga Alanina
+Ainda, é possível obter itens de um dicionário da seguinte forma:
+
+aminoacidos = {'alanina': ['ALA', 'A'], \
+'cisteina': ['CYS','C']}
+ 
+# Mais amino
+aminoacidos['histidina'] = ['HIS', 'H']
+ 
+for um, tres in aminoacidos.items():
+	print(um, '=>', tres)
+ 
+'''
+cisteina => ['CYS', 'C']
+histidina => ['HIS', 'H']
+alanina => ['ALA', 'A']
+'''
