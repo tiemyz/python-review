@@ -60,11 +60,11 @@ PERCORRENDO LISTAS USANDO O LAÇO >FOR<:
 
 ★ Em certas situações pode ser necessário saber a posição de um elemento numa determinada lista. Para isso vamos associar o for com um comando condicional if da seguinte maneira:
 
-                 nucleotideos = ["A","T","C","G","A","T","C","A","C"]
+                          nucleotideos = ["A","T","C","G","A","T","C","A","C"]
  	
-                 for i in range(len(nucleotideos)):
-	             if nucleotideos[i] == "A":
-		         print("Adenina encontrada na posicao: %d" % i) 
+                          for i in range(len(nucleotideos)):
+	                      if nucleotideos[i] == "A":
+		                  print("Adenina encontrada na posicao: %d" % i) 
 
 ★ Vamos entender melhor o que foi realizado acima:
 
