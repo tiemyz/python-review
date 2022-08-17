@@ -17,6 +17,14 @@ PRINCIPAIS MÉTODOS DA LISTA:
 
 ★ len(lista) -> Retorna o número de elementos de lista.
 
+★ print lista.index(x) -> Imprime a posição da primeira ocorrência do elemento x na lista.
+
+★ lista.remove(x) -> Remove o primeiro elemento cujo valor seja igual a x.
+
+★ lista.pop(i) -> Remove o elemento da posição “i” da lista e o retorna. Pode ser usado como lista.pop( ), nesse caso irá remover e retornar o último elemento.
+
+★ del lista[i] -> Apaga o elemento na posição “i” da lista. Pode-se passar uma faixa de elementos a serem deletados. O comando del lista[:] apagará toda a lista.
+
                                      EXEMPLOS: 
 
                              nucleotideos = ["A","T","C","G"]
